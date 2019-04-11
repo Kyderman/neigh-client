@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  API_URL: 'http://localhost:3001/api/v1/scrape/'
+  API_URL: 'http://localhost:3001/api/v1/'
 };
 
 /*

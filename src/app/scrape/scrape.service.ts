@@ -14,7 +14,7 @@ export class ScrapeService {
   ) { }
 
   public getRequestCount(date: Date) {
-    return this.http.get(`${environment.API_URL}getRequestCount?scrapeDate=${date.toLocaleDateString('en-US')}`).pipe(
+    return this.http.get(`${environment.API_URL}scrape/getRequestCount?scrapeDate=${date.toLocaleDateString('en-US')}`).pipe(
       map(a => {
         return a['data']['requests'];
       })
@@ -22,7 +22,7 @@ export class ScrapeService {
   }
 
   public getScrapeData(date: Date, batch: number, count: number = 10): Observable<any> {
-    return this.http.get(`${environment.API_URL}?scrapeDate=${date.toLocaleDateString('en-US')}&batch=${batch}&count=${count}`).pipe(
+    return this.http.get(`${environment.API_URL}scrape?scrapeDate=${date.toLocaleDateString('en-US')}&batch=${batch}&count=${count}`).pipe(
       map(a => {
         return a['data'];
       })
